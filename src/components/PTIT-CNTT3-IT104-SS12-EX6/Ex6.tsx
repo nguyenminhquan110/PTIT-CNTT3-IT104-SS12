@@ -1,77 +1,63 @@
-import React, { Component } from "react";
+import React from "react";
 
-// ---------------------
-// Component Con
-// ---------------------
-interface Post {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-}
+// Component Header
+const Header: React.FC = () => {
+  return (
+    <div style={{ backgroundColor: "#e0e0e0", padding: "10px", textAlign: "center" }}>
+      <h2>Header</h2>
+    </div>
+  );
+};
 
-interface DetailPostProps {
-  post: Post;
-}
+const Menu: React.FC = () => {
+  return (
+    <div style={{ backgroundColor: "#1e3a8a", color: "white", padding: "10px", height: "100%" }}>
+      <h3>Menu</h3>
+      <ul>
+        <li>Dashboard</li>
+        <li>Users</li>
+        <li>Settings</li>
+      </ul>
+    </div>
+  );
+};
 
-class DetailPost extends Component<DetailPostProps> {
-  render() {
-    const { id, title, content, author } = this.props.post;
-    return (
-      <div style={{ border: "1px solid gray", padding: "10px", margin: "10px 0" }}>
-        <h3>{title}</h3>
-        <p>{content}</p>
-        <p><strong>Tác giả:</strong> {author}</p>
-        <small>ID bài viết: {id}</small>
+// Component Main
+const Main: React.FC = () => {
+  return (
+    <div style={{ padding: "20px", flex: 1 }}>
+      <h3>Main</h3>
+      <p>Nội dung chính sẽ hiển thị ở đây...</p>
+    </div>
+  );
+};
+
+const Footer: React.FC = () => {
+  return (
+    <div style={{ backgroundColor: "#e0e0e0", padding: "10px", textAlign: "center" }}>
+      <h4>Footer</h4>
+    </div>
+  );
+};
+
+const AdminIndex: React.FC = () => {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      {/* Header */}
+      <Header />
+
+      {/* Nội dung gồm Menu + Main */}
+      <div style={{ display: "flex", flex: 1 }}>
+        <div style={{ width: "200px" }}>
+          <Menu />
+        </div>
+        <Main />
       </div>
-    );
-  }
-}
 
-// ---------------------
-// Component Cha
-// ---------------------
-interface ListPostState {
-  posts: Post[];
-}
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
+};
 
-class ListPost extends Component<{}, ListPostState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      posts: [
-        {
-          id: 1,
-          title: "Giới thiệu về ReactJS",
-          content: "ReactJS là thư viện JavaScript phổ biến để xây dựng giao diện người dùng.",
-          author: "Nguyễn Minh Quân"
-        },
-        {
-          id: 2,
-          title: "Props và State trong React",
-          content: "Props được dùng để truyền dữ liệu từ component cha xuống component con.",
-          author: "Trần Văn Nam"
-        },
-        {
-          id: 3,
-          title: "JSX là gì?",
-          content: "JSX cho phép viết HTML trong JavaScript và dễ dàng render ra giao diện.",
-          author: "Lê Thị Hoa"
-        }
-      ]
-    };
-  }
-
-  render() {
-    return (
-      <div style={{ border: "2px solid blue", padding: "20px" }}>
-        <h2>Danh sách bài viết</h2>
-        {this.state.posts.map((post) => (
-          <DetailPost key={post.id} post={post} />
-        ))}
-      </div>
-    );
-  }
-}
-
-export default ListPost;
+export default AdminIndex;

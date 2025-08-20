@@ -1,36 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 
-interface Exercise02State {
-  id: number;
-  name: string;
-  birthday: string;
-  address: string;
-}
+const Ex2: React.FC = () => {
+  const a = 10;
+  const b = 10;
 
-class Exercise02 extends Component<{}, Exercise02State> {
-  constructor(props: {}) {
-    super(props);
+  const add = (x: number, y: number): number => x + y;
+  const subtract = (x: number, y: number): number => x - y;
+  const multiply = (x: number, y: number): number => x * y;
+  const divide = (x: number, y: number): number => x / y;
 
-    // Khởi tạo state
-    this.state = {
-      id: 1,
-      name: "Nguyễn Minh Quân",  
-      birthday: "01/10/2006",
-      address: "Hà Nội, Việt Nam" 
-    };
-  }
+  return (
+    <div style={{ padding: "20px" }}>
+      <h2>Danh sách kết quả</h2>
+      <ul>
+        <li>{a} + {b} = {add(a, b)}</li>
+        <li>{a} - {b} = {subtract(a, b)}</li>
+        <li>{a} * {b} = {multiply(a, b)}</li>
+        <li>{a} / {b} = {divide(a, b)}</li>
+      </ul>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div style={{ padding: "20px", fontSize: "18px" }}>
-        <h2>Bài tập ReactJS - Exercise02</h2>
-        <p><strong>ID:</strong> {this.state.id}</p>
-        <p><strong>Tên:</strong> {this.state.name}</p>
-        <p><strong>Ngày sinh:</strong> {this.state.birthday}</p>
-        <p><strong>Địa chỉ:</strong> {this.state.address}</p>
-      </div>
-    );
-  }
-}
-
-export default Exercise02;
+export default Ex2;

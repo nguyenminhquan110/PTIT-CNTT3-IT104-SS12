@@ -1,53 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 
-interface User {
-  id: number;
-  name: string;
-  age: number;
-}
+const Ex3: React.FC = () => {
+  const user = {
+    name: "Nguyễn Minh Quân",
+    gender: "Nam",
+    dob: "01/10/2006",
+    email: "nmq@gmail.com",
+    address: "Thanh Xuân, Hà Nội",
+  };
 
-interface Exercise03State {
-  users: User[];
-}
+  return (
+    <div style={{ padding: "20px" }}>
+      <h2>Thông tin cá nhân</h2>
+      <ul>
+        <li>
+          Họ và tên: <b>{user.name}</b>
+        </li>
+        <li>
+          Giới tính: <b>{user.gender}</b>
+        </li>
+        <li>
+          Ngày sinh: <b>{user.dob}</b>
+        </li>
+        <li>
+          Email: <b>{user.email}</b>
+        </li>
+        <li>
+          Địa chỉ: <b>{user.address}</b>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
-class Exercise03 extends Component<{}, Exercise03State> {
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      users: [
-        { id: 1, name: "John", age: 30 },
-        { id: 2, name: "Mary", age: 25 },
-        { id: 3, name: "Jane", age: 20 }
-      ]
-    };
-  }
-
-  render() {
-    return (
-      <div style={{ padding: "20px" }}>
-        <h2>Danh sách Users</h2>
-        <table border={1} cellPadding={10} style={{ borderCollapse: "collapse" }}>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.age}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-}
-
-export default Exercise03;
+export default Ex3;

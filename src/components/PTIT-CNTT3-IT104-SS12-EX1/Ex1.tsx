@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 
-interface Exercises01State {
-  name: string;
+interface Ex1State {
+  courses: string[];
 }
 
-class Exercises01 extends Component<{}, Exercises01State> {
+class Ex1 extends Component<{}, Ex1State> {
   constructor(props: {}) {
     super(props);
-
-    // Khởi tạo state
     this.state = {
-      name: "Nguyễn Minh Quân"
+      courses: ["HTML", "CSS", "Java", "ReactJS"]
     };
   }
 
   render() {
     return (
-      <div style={{ padding: "20px", fontSize: "18px" }}>
-        <h2>Bài tập ReactJS - Exercises01</h2>
-        <p>Xin chào, mình là <strong>{this.state.name}</strong> 👋</p>
+      <div style={{ padding: "20px" }}>
+        <h2>Danh sách khóa học</h2>
+        <ul>
+          {this.state.courses.map((course, index) => (
+            <li key={index}>
+              {index + 1}: {course}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
 }
 
-export default Exercises01;
+export default Ex1;
