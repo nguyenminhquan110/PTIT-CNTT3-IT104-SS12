@@ -5,6 +5,9 @@ import Exercise03 from './components/PTIT-CNTT3-IT104-SS12-EX3/Ex3'
 import Ex4 from './components/PTIT-CNTT3-IT104-SS12-EX4/Ex4'
 import Ex5 from './components/PTIT-CNTT3-IT104-SS12-EX5/Ex5'
 import Ex6 from './components/PTIT-CNTT3-IT104-SS12-EX6/Ex6'
+import Ex7 from './components/PTIT-CNTT3-IT104-SS12-EX7/Ex7'
+import Ex8 from './components/PTIT-CNTT3-IT104-SS12-EX8/Ex8'
+
 export default function App() {
   return (
     <div>
@@ -14,7 +17,8 @@ export default function App() {
       {/* <Ex4 /> */}
       {/* <Ex5 /> */}
       {/* <Ex6 /> */}
-
+{/* </Ex7> */}
+{/* </Ex8> */}
     </div>
   )
 }

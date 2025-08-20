@@ -1,6 +1,5 @@
 import React from "react";
 
-// Component Header
 const Header: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#e0e0e0", padding: "10px", textAlign: "center" }}>
